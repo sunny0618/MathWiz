@@ -1,0 +1,22 @@
+body {
+    /*css for full size background image*/
+    background: url("Images/grass1.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    color: white !important;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+
+.dropdown-menu > li {
+    font-size: 40px !important;
+}
+
+.dropdown-menu {
+    height: 500px;
+}
+
