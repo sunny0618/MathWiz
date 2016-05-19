@@ -1,45 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MathWiz - Landing</title>
-    <link rel="stylesheet" type="text/css" href="styleLandingPage.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-
-<div class="container" style="margin-top: 400px;">
-    <div class="col-md-12">
-        <div class="btn-group-vertical" role="group" aria-label="center">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Play <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#">Level 1</a></li>
-                    <li><a href="#">Level 2</a></li>
-                    <li><a href="#">Level 3</a></li>
-                </ul>
-            </div>
-            <button type="button" class="btn btn-default btn-lg btn-block">Instructions</button>
-            <button type="button" class="btn btn-default btn-lg btn-block">Score Board</button>
-        </div>
-    </div>
-</div>
-
-
-
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Group 9 - Joe, JunFeng, Ben, Sunny</p>
-    </div>
-</footer>
-
-
-</body>
-
+	<head>
+		<meta charset="UTF-8">
+		<title>MathWiz - Landing</title>
+		<link rel="stylesheet" type="text/css" href="styleLandingPage.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="animate.css">
+	</head>
+	<body>
+		<img class="animated fadeInDown" id="logo" src="Images/MathWiz.png" style="margin-top: 100px;"> </img>
+		<img class="animated fadeInDown" id="paul" src="Images/wizardLanding.png" style="margin-top: 40px; clear: left;"> </img>
+		<div class="container" id="buttonGroup">
+			<div class="btn-group-vertical btn-block" role="group" aria-label="center" aria-expanded="false">
+				<div class="btn-group dropup">
+					<button type="button" id="play" class="btn btn-default dropdown-toggle btn-lg btn-block " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Play <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-left">
+						<li><a href="#">Level 1</a></li>
+						<li><a href="#">Level 2</a></li>
+						<li><a href="#">Level 3</a></li>
+						<li><a href="#">Level 4</a></li>
+						<li><a href="#">Level 5</a></li>
+					</ul>
+				</div>
+			</div>
+			<button type="button" id="instructions" class="btn btn-default btn-lg btn-block">Instructions</button>
+			<button type="button" id="scoreboard" class="btn btn-default btn-lg btn-block">Scoreboard</button>
+		</div>
+		</div>
+		<div id="panel" >
+			<div id="inner">
+				<p> 
+					You are the only one left in your kingdom. All the brave warriors and wizards have perished in a counter attack against the invaders. Now it is up to you, a math wizard, to defeat the monsters with your math abilities.
+				</p>
+				<p> 
+					Use your speed and problem solving abilities to defeat the monsters.
+				</p>
+				<p>1) To eliminate a monster, solve the math equation over top the wizard's head</p>
+				<p>2) Click on the corresponding monster with the correct answer</p>
+				<p>3) Eliminate all the monsters before they reach the castle!</p>
+			</div>
+		</div>
+		<div>
+			<img id="easterEgg" src="Images/paulEaster.png">
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script> 
+			jQuery(function( $ ){
+			        // Get a reference to the container.
+			        var panel = $( "#panel" );
+			        // Bind the link to toggle the slide.
+			        $( "#instructions" ).click(
+			            function( event ){
+			                // Prevent the default event.
+			                event.preventDefault();
+			                // Toggle the slide based on its current
+			                // visibility.
+			                if (panel.is( ":visible" )){
+			                    // Hide - slide up.
+			                    panel.slideUp( 1000 );
+			                } else {
+			                    // Show - slide down.
+			                    panel.slideDown( 1000 );
+			                }
+			            }
+			        );
+			    });
+		</script>
+		<script id="week1Challenge"> 
+			jQuery(function( $ ){
+			        // Get a reference to the container.
+			        var paul = $( "#paul" );
+			        var easterEgg = $("#easterEgg");
+			        // Bind the link to toggle the slide.
+			        $( "#paul" ).click(
+			            function( event ){
+			                // Prevent the default event.
+			                event.preventDefault();
+			                // Toggle the slide based on its current
+			                // visibility.
+			                if (easterEgg.is( ":visible" )){
+			                    // Hide - slide up.
+			                    easterEgg.hide( 100 );
+			                } else {
+			                    // Show - slide down.
+			                    easterEgg.show( 100 );
+			                }
+			            }
+			        );
+			    });
+			
+		</script>
+		<script>
+			function blinker() {
+			$('span').fadeOut(500);
+			$('span').fadeIn(500);
+			}        
+			setInterval(blinker, 1000);
+		</script>
+	</body>
 </html>
