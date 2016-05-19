@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MathWiz - Game Over</title>
+      <link rel="stylesheet" type="text/css" href="styleGameover.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
+</head>
+
+<body>
+
+<div class="container" id="gameover">
+    <h1>The kingdom has fallen!</h1>
+    <img src="Images/wizardDead1.png" class="desaturate"></br>
+    
+       <label for="user_name">Enter your name：</label> 
+       <input type="text" id="user_name" name="user_name" class="text"/> 
+    </div>
+       <!--<label for="score">Score: </label>
+       <input type="text" id="score" name="score" class="text"/> 
+       <br/>
+        <input type="button" onclick="save()" value="submit"/> 
+		<div id= "list">      
+                    </div> 
+    </div>-->
+	
+    
+<div class="container" id="buttonGroup">
+			<div class="btn-group" role="group" aria-label="center" aria-expanded="false">
+				<div class="btn-group dropup">
+					<button type="button" id="play" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Try Again! <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-left">
+						<li><a href="#">Level 1</a></li>
+						<li><a href="#">Level 2</a></li>
+						<li><a href="#">Level 3</a></li>
+						<li><a href="#">Level 4</a></li>
+						<li><a href="#">Level 5</a></li>
+					</ul>
+				</div>
+			</div>
+			<button type="button" id="main" class="btn btn-default btn-lg">Main Menu</button>
+			
+		</div>
+		</div>
+    
+    
+    
+</body>
+    <script>
+        function save(){
+              var score = document.getElementById("score").value; 
+                var user_name = document.getElementById("user_name").value; 
+                localStorage.setItem(score,user_name);
+           
+        }
+        
+         function load(){ 
+                            var list = document.getElementById("list"); 
+                            if(localStorage.length>0){ 
+                                var result = "<table border='1'>"; 
+                            for(var i=0;i<localStorage.length;i++){ 
+                            var score = localStorage.key(i); 
+                            var str = localStorage.getItem(score); 
+                           // var contact = JSON.parse(str);
+                             result += "<tr><td>"+str+"</td><td>"+score+"</td></tr>";    
+                            }
+                            result+="</table>";
+                            list.innerHTML = result; 
+                            }else{ 
+                            list.innerHTML = "the data is null now"; 
+                            } 
+                            }
+    </script>
+
+
+</html>

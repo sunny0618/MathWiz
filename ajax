@@ -1,0 +1,16 @@
+<script>
+r=new xml HttpRequest();
+r.open("GET",scores.php?score=99",true);
+r.onreadystatechange=function{
+if r.readystate==4){
+if(r.status==200)
+{
+
+alert(r.responseText);
+
+}
+
+}
+r.send(null);
+</script>
+
